@@ -161,9 +161,6 @@ class Product {
         }
       }
 
-      // update calculated price in the HTML
-      thisProduct.priceElem.innerHTML = price;
-  }
     const app = {
       initMenu: function(){
         const thisApp = this;
@@ -172,6 +169,7 @@ class Product {
           new Product(productData, thisApp.data.products[productData]);
         }
       },
+
       initData: function (){
         const thisApp = this;
 
