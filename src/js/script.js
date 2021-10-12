@@ -57,9 +57,9 @@ class Product {
       const thisProduct = this;
       thisProduct.id = id;
       thisProduct.data = data;
-      thisProduct.initAccordion();
       thisProduct.renderInMenu();
       thisProduct.getElements();
+      thisProduct.initAccordion();
       thisProduct.initOrderForm();
       thisProduct.processOrder();
     console.log('new Product:', thisProduct);
@@ -122,7 +122,7 @@ class Product {
     }
     processOrder() {
       const thisProduct = this;
-      console.log(processOrder)
+      console.log('processOrder')
     // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
       const formData = utils.serializeFormToObject(thisProduct.form);
       //console.log('formData', formData);
@@ -160,7 +160,7 @@ class Product {
           thisProduct.priceElem.innerHTML = price;
         }
       }
-
+    }}
     const app = {
       initMenu: function(){
         const thisApp = this;
