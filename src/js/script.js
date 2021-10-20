@@ -489,32 +489,32 @@
       });
     }
 
-  }
 
-  initActions() {
-      const thisCartProduct = this;
+    initActions() {
+        const thisCartProduct = this;
 
-      thisCartProduct.dom.edit.addEventListener('click', function (event) {
-        event.preventDefault;
-      });
+        thisCartProduct.dom.edit.addEventListener('click', function (event) {
+          event.preventDefault;
+        });
 
-      thisCartProduct.dom.remove.addEventListener('click', function (event) {
-        event.preventDefault;
-        thisCartProduct.remove();
-      });
-    }
+        thisCartProduct.dom.remove.addEventListener('click', function (event) {
+          event.preventDefault;
+          thisCartProduct.remove();
+        });
+      }
 
-    remove() {
-      const thisCartProduct = this;
+      remove() {
+        const thisCartProduct = this;
 
-      const event = new CustomEvent('remove', {
-        bubbles: true,
-        detail: {
-          cartProduct: thisCartProduct,
-        }
-      });
+        const event = new CustomEvent('remove', {
+          bubbles: true,
+          detail: {
+            cartProduct: thisCartProduct,
+          }
+        });
 
-      thisCartProduct.dom.wrapper.dispatchEvent(event);
+        thisCartProduct.dom.wrapper.dispatchEvent(event);
+      }
     }
 
   const app = {
