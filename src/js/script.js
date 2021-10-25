@@ -383,7 +383,7 @@
       thisCart.dom.totalNumber = thisCart.dom.wrapper.querySelector(select.cart.totalNumber);
       thisCart.dom.subtotalPrice = thisCart.dom.wrapper.querySelector(select.cart.subtotalPrice);
       thisCart.dom.totalPrice = thisCart.dom.wrapper.querySelectorAll(select.cart.totalPrice);
-      thisCart.dom.form = thisCart.dom.form.querySelector(select.cart.form);
+      thisCart.dom.form = thisCart.dom.wrapper.querySelector(select.cart.form);
       thisCart.dom.address = thisCart.dom.form.querySelector(select.cart.address);
       thisCart.dom.phone = thisCart.dom.form.querySelector(select.cart.phone);
     }
