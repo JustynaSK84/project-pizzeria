@@ -1,12 +1,11 @@
-/* global Handlebars, dataSource */ // eslint-disable-line
+import app from './app.js';
 
-const utils = {}; // eslint-disable-line no-unused-vars
-
-utils.createDOMFromHTML = function(htmlString) {
-  let div = document.createElement('div');
-  div.innerHTML = htmlString.trim();
-  return div.firstChild;
-};
+export const utils = {
+  createDOMFromHTML: function (htmlString) {
+    let div = document.createElement('div');
+    div.innerHTML = htmlString.trim();
+    return div.firstChild;
+  },
 
 utils.createPropIfUndefined = function(obj, key, value = []){
   // eslint-disable-next-line
@@ -38,7 +37,7 @@ utils.serializeFormToObject = function(form){
 };
 utils.convertDataSourceToDbJson = function(){
   const productJson = [];
-  for(let key in dataSource.products){
+  for(let key in app.data.products){
     productJson.push(Object.assign({id: key}, dataSource.products[key]));
   }
 
