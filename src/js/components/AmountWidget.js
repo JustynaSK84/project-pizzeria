@@ -29,14 +29,13 @@ class AmountWidget {
 
     const newValue = parseInt(value);
 
-    /* TODO: Add validation */
-    if (newValue !== thisWidget.value && newValue >= settings.amountWidget.defaultMin && newValue <= settings.amountWidget.defaultMax) {
-      thisWidget.value = newValue;
-    }
+    /* [DONE] add validation */
+    if (newValue !== thisWidget.value && !isNaN(newValue)) {
+      if (newValue >= settings.amountWidget.defaultMin && newValue <= settings.amountWidget.defaultMax) {
+        thisWidget.value = newValue;
 
-    thisWidget.announce();
-    thisWidget.input.value = thisWidget.value;
-
+        thisWidget.announce();
+     }
   }
   initActions() {
     const thisWidget = this;
@@ -52,7 +51,7 @@ class AmountWidget {
       event.preventDefault();
       thisWidget.setValue(thisWidget.value + 1);
     });
-  }
+  },
 
   announce() {
     const thisWidget = this;
