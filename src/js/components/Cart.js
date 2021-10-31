@@ -45,7 +45,7 @@ class Cart {
     });
     thisCart.dom.form.addEventListener('submit', function (event) {
       event.preventDefault();
-      thisCart.sendOrder();
+      thisCart.prepareOrder();
     });
   }
   add(menuProduct) {
@@ -105,7 +105,7 @@ class Cart {
       domTotalPrice.innerHTML = thisCart.totalPrice;
     }
   }
-  sendOrder() {
+  prepareOrder() {
     const thisCart = this;
     const url = settings.db.url + '/' + settings.db.orders;
 
@@ -120,6 +120,10 @@ class Cart {
     for (let prod of thisCart.products) {
       payload.products.push(prod.getData());
     }
+    thisCart.send(url, payload);
+  }
+
+  send (url, payload) {
 
     const options = {
       method: 'POST',
