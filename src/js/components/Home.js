@@ -1,4 +1,4 @@
-/* global Flickity */ // eslint-disable-line
+/* global Flickity */
 
 import { select, templates } from '../settings.js'; // eslint-disable-line
 
@@ -24,14 +24,14 @@ class Home {
 
   initWidgets() {
 
-    // const element = document.querySelector(select.widgets.carousel);
+    const element = document.querySelector(select.widgets.carousel);
 
-    //new Flickity (element, {
-    // options
-    //  autoPlay: 2500,
-    //  prevNextButtons: false,
-    //  imagesLoaded: true,
-    //  });
+    new Flickity (element, {
+      // options
+      autoPlay: 2500,
+      prevNextButtons: false,
+      imagesLoaded: true,
+    });
 
   }
 }
