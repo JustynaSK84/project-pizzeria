@@ -1,4 +1,4 @@
-import { select, settings, template, classNames } from '../settings.js';
+import { select, settings, templates, classNames } from '../settings.js';
 import { utils } from '../utils.js';
 import AmountWidget from './AmountWidget.js';
 import DatePicker from './DatePicker.js';
@@ -47,7 +47,7 @@ class Booking {
       eventsRepeat:
         settings.db.url +
         '/' +
-        settings.db.event +
+        settings.db.events +
         '?' +
         params.eventsRepeat.join('&'),
     };
@@ -69,6 +69,9 @@ class Booking {
         ]);
       })
       .then(function ([bookings, eventsCurrent, eventsRepeat]) {
+        console.log (eventsRepeat);
+        console.log(urls);
+        console.log(urls.eventsRepeat);
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
       });
   }
@@ -102,6 +105,7 @@ class Booking {
   }
 
   makeBooked(date, hour, duration, table) {
+    const thisBooking = this;
     if (typeof thisBooking.booked[date] == 'undefined') {
       thisBooking.booked[date] = {};
     }

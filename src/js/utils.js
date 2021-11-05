@@ -1,11 +1,14 @@
+/* global Handlebars, dataSource */
+
+
 import app from './app.js';
 
-export const utils = {
-  createDOMFromHTML: function (htmlString) {
-    let div = document.createElement('div');
-    div.innerHTML = htmlString.trim();
-    return div.firstChild;
-  },
+export const utils = {};
+utils.createDOMFromHTML = function (htmlString) {
+  let div = document.createElement('div');
+  div.innerHTML = htmlString.trim();
+  return div.firstChild;
+};
 
 utils.createPropIfUndefined = function(obj, key, value = []){
   // eslint-disable-next-line
