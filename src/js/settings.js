@@ -131,7 +131,7 @@ export const settings = {
 
   // PARAMETERS NECESSARY FOR API CONNECTION - START
   db: {
-    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131' : ''),
+    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3333' : ''),
     products: 'products',
     orders: 'orders',
     bookings: 'bookings',
