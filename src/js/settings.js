@@ -44,6 +44,11 @@ export const select = {
     },
     carousel: '.carousel',
   },
+  home: {
+    order: '.order-online',
+    book: '.book-table',
+  },
+
   // CODE ADDED START
   cart: {
     productList: '.cart__order-summary',

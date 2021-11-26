@@ -1,6 +1,7 @@
 /* global Flickity */
 
 import { select, templates } from '../settings.js'; // eslint-disable-line
+import app from '../app.js';
 
 class Home {
   constructor(element){
@@ -41,11 +42,11 @@ class Home {
     const thisHome = this;
 
     thisHome.dom.order.addEventListener('click', function(){
-      thisHome.activatePage('order');
+      app.activatePage('order');
     });
 
     thisHome.dom.book.addEventListener('click', function(){
-      thisHome.activatePage('booking');
+      app.activatePage('booking');
     });
   }
 }
